@@ -7,7 +7,7 @@ comm = MPI.Comm.Get_parent()
 size = comm.Get_size()
 rank = comm.Get_rank()
 
-print('Run child_mpi_2. size=', size, ', rank=', rank, ', args=', sys.argv)
+print('Run child_mpi_3. size=', size, ', rank=', rank, ', args=', sys.argv)
 
 N = numpy.array(0, dtype='i')
 comm.Bcast([N, MPI.INT], root=0)

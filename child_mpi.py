@@ -1,3 +1,5 @@
+import sys
+
 from mpi4py import MPI
 import numpy
 
@@ -5,7 +7,7 @@ comm = MPI.Comm.Get_parent()
 size = comm.Get_size()
 rank = comm.Get_rank()
 
-print('Run child_mpi. size=', size, ', rank=', rank)
+print('Run child_mpi. size=', size, ', rank=', rank, ', args=', sys.argv)
 
 N = numpy.array(0, dtype='i')
 comm.Bcast([N, MPI.INT], root=0)
